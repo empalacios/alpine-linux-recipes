@@ -22,6 +22,8 @@ rc-service apache2 stop
 ### Installation
 ```
 apk add openvpn
+modprobe tun
+echo "tun" >> /etc/modules-load.d/tun.conf
 ```
 
 ### Start a connection
