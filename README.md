@@ -1,6 +1,29 @@
 # Alpine Linux
 Recipes used with Alpine Linux.
 
+## Base Alpine Installation
+The following steps are for a virtual machine installation with one Network Interface Card (NIC) and one drive, and it is intended to use as a client to connect to other machines using SSH. It is not intended to use it as a server nor a desktop computer.
+
+- Create a new virtual machine and insert the Alpine Linux iso image for installation and start it.
+- Log into the virtual machine using `root` user, it won't ask for a password.
+- Install the base system using `setup-alpine` command, it will ask you for the following parameters
+- Keyboard Layout: `es` (I'm guatemalan)
+- Variant (of the keyboard): `es-winkeys` (I'm used to Windows Systems, hahaha)
+- Hostname: use the default value `localhost`
+- Interfaces to initialize: use the default, maybe `eth0` (I'm just have one interface configured)
+- IP Address for the interface: use the default `dhcp`
+- Any manual network configuration: default `no`
+- Set the password for root account
+- Time zone: I use `America/Guatemala` (you can use the `?` to view the list of time zones available)
+- HTTP/FTP Proxy: I don't have any so `none` (It will depend on your network configuration)
+- NTP Client: I use the default `chrony`
+- Mirror: I use the default again `1`
+- SSH Server: I'm used to OpenSSH, so `openssh`
+- Select the disk to use: It shows `sda` or `vda`
+- How would you like to use the disk: In my case, I want all configuration in the only disk I have configured, so `sys`, you can use the `?` to see the alternatives
+- Erase the above disk and continue: I choose yes `y`
+- Reboot using `poweroff` command, detach the installation ISO Image and start the virtual machine.
+
 ## Update package list
 ```
 apk update
